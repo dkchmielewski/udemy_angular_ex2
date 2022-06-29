@@ -9,14 +9,16 @@ export class UserComponent implements OnInit {
   isEnabled = false;
 	username = '';
 	constructor() { 
-		if(this.username !== null) {
-			this.isEnabled = true;
-		}
 	}
-	onReset() {
-		this.username = '';
+	onAddUser(event: Event) {
+		if((<HTMLInputElement>event.target).value !== null) {
+      this.isEnabled = true;
+      this.username = (<HTMLInputElement>event.target).value;
+    } 
 	}
-
+  onReset() {
+    this.username = '';
+  }
   ngOnInit(): void {
   }
 
