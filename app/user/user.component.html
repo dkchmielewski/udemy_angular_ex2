@@ -1,4 +1,4 @@
-<input type="text" [(ngModel)]="username">
+<input type="text" [(ngModel)]="username" (input)="onAddUser($event)">
 <p>{{ username }}</p>
 
-<button [disabled]="!isEnabled" (click)="onReset()">Reset User</button>
+<button [disabled]="!isEnabled" (click)="onReset()">Add User</button>
